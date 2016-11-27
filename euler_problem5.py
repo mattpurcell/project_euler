@@ -1,11 +1,10 @@
 #!/usr/bin/python
 
-import sys
-
-def smallestDiv(n):
-    divisors = [x for x in range(1,(n+1))]  
-    for i in xrange(2520,sys.maxint,n):
-        if(all(i%x == 0 for x in divisors)):
-            return i
-
-print (smallestDiv(20))
+i = 1
+for k in (range(1, 21)):
+    if i % k > 0:
+        for j in range(1, 21):
+            if (i*j) % k == 0:
+                i *= j
+                break
+print i
